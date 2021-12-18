@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maggiore tra tre numeri in JavaScript</title>
+  <style>
+    body {
+      background-color: #03071e;
+    }
+    label {
+      color: white;
+    }
+    p {
+      color: white;
+    }
+    h1 {
+      color: white;
+      text-align: center;
+    }
+    #container {
+      padding: 1%;
+      width: 300px;
+      height: 200px;
+      border-radius: 25px;
+      text-align: center;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 10px 10px 6px 6px brown;
+    }
+  </style>
+</head>
+<body>
+  <h1><em>MAGGIORE TRA TRE NUMERI:</em></h1>
+  <div id="container">
+    <label for="primoNumero">Inserisci il PRIMO numero</label><br />
+    <input id="primoNumero" type="text" /> <br />
+    <label for="primoNumero">Inserisci il SECONDO numero</label><br />
+    <input id="secondoNumero" type="text" /><br />
+    <label for="primoNumero">Inserisci il TERZO numero</label><br />
+    <input id="terzoNumero" type="text" /><br />
+    <p id="numeroMaggiore"></p>
+    <p id="numero"></p>
+    <button onclick="trovaMaggiore()">Calcola</button>
+  </div>
+  <script>
+    function trovaMaggiore() {
+      var a, b, c;
+      a = document.getElementById("primoNumero").value;
+      b = document.getElementById("secondoNumero").value;
+      c = document.getElementById("terzoNumero").value;
+      var nMaggiore = 0;
+
+      if (a == b && b == c) {
+        nMaggiore = "E' inutile che metti 3 numeri uguali";
+      } else {
+        if (a > b) {
+          nMaggiore = a;
+        } else {
+          nMaggiore = b;
+        }
+        if (nMaggiore > c) {
+        } else {
+          nMaggiore = c;
+        }
+      }
+      if (nMaggiore=a){
+        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il primo"+"("+nMaggiore+")";
+      }
+      if (nMaggiore=b){
+        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il secondo"+"("+nMaggiore+")";
+      }
+      if (nMaggiore=c){
+        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il terzo"+"("+nMaggiore+")";
+      }
+    }
+  </script>
+</body>
+</html>
