@@ -53,36 +53,42 @@
     <button onclick="trovaMaggiore()">Calcola</button>
   </div>
   <script>
-    function trovaMaggiore() {
-      var a, b, c;
-      a = document.getElementById("primoNumero").value;
-      b = document.getElementById("secondoNumero").value;
-      c = document.getElementById("terzoNumero").value;
-      var nMaggiore = 0;
+    
+      function trovaMaggiore() {/*Dichiariamo una funzione che verrà chiamata nell'onclick*/
+        var a, b, c;/*Dichiariamo 3 variabili di tipo any*/
+        a = document.getElementById("primoNumero").value;/*a = al valore dell elemento con id primoNumero*/
+        b = document.getElementById("secondoNumero").value;/*b = al valore dell elemento con id secondoNumero*/
+        c = document.getElementById("terzoNumero").value;/*c = al valore dell elemento con id terzoNumero*/
+        var numeroMaggiore = 0;/*Dichiariamo una variabile dove viene inserito il numero maggiore*/
+        if ( a == b && b == c ){/*se tutti e 3 sono uguali*/
+          document.getElementById("numeroMaggiore").innerHTML = "I tre numeri sono uguali"/*Scrivi nel <p> "I tre numeri sono uguali"*/
+        }else{/*Se la condizione precedente non è vera...*/
+       if ( a > b ){/*Se a è maggiore di b*/
+         numeroMaggiore = a /*Il numero maggiore è "a"*/
+         if (numeroMaggiore < c){/*se il numero maggiore è minore di "c"*/
+           numeroMaggiore=c/*Il numero maggiore è "c"*/
+         }
+        } else{/*Se la condizione precedente non è vera...*/
+           numeroMaggiore = b /*Il numero maggiore è "b"*/
+         }
+         if ( numeroMaggiore > c ){/*Controlla se il numero maggiore è "c"*/
 
-      if (a == b && b == c) {
-        nMaggiore = "E' inutile che metti 3 numeri uguali";
-      } else {
-        if (a > b) {
-          nMaggiore = a;
-        } else {
-          nMaggiore = b;
-        }
-        if (nMaggiore > c) {
-        } else {
-          nMaggiore = c;
-        }
+       } else {/*Se la condizione precedente non è vera...*/
+         numeroMaggiore = c/*Il numero maggiore è "c"*/
+
+       } 
       }
-      if (nMaggiore=a){
-        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il primo"+"("+nMaggiore+")";
+      if (numeroMaggiore == a){/*Se il numero maggiore è "a"*/
+        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il primo : "+numeroMaggiore/*Scrivi nel <p>"Il numero maggiore è il primo"*/
       }
-      if (nMaggiore=b){
-        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il secondo"+"("+nMaggiore+")";
+      if (numeroMaggiore == b){/*Se il numero maggiore è "b"*/
+        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il secondo : "+numeroMaggiore/*Scrivi nel <p>"Il numero maggiore è il secondo"*/
       }
-      if (nMaggiore=c){
-        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il terzo"+"("+nMaggiore+")";
+      if (numeroMaggiore == c){/*Se il numero maggiore è "c"*/
+        document.getElementById("numeroMaggiore").innerHTML = "Il numero maggiore è il terzo : "+numeroMaggiore/*Scrivi nel <p>"Il numero maggiore è il terzo"*/
       }
-    }
-  </script>
+      }
+    </script>
+
 </body>
 </html>
